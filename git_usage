@@ -1,0 +1,55 @@
+#
+# Git basic Usage on Ubuntu
+#
+# Author: Wallance Hou
+# Ddate: 08/11/2017
+#
+
+
+1. install git on ubuntu
+
+$ cd ~/.ssh
+
+#generate key:
+
+ssh-keygen -t rsa -C "xxxx@gmail.com"//??email??,??????ok
+
+
+4. Log on github Web, setting-> ssh and import your id_rsa.pub
+
+5. test if ok with running command below.
+$ ssh -T git@github.com
+
+#if showed:Hi xxxx You've successfully authenticated, but GitHub does not provide shell access. //it indicates OK.
+
+6. user info setting:
+$ git config --global user.name "defnngj"				//user github name
+$ git config --global user.email  "xxxx@gmail.com"	//user email
+
+
+#====================create new repository========================
+
+1. return to github homepage and click "New Repository"
+
+# fill in the below infom.
+
+project name: hello world
+
+description : my first project
+
+click "Create Repository"    //it is done on github.com
+
+2. create the same repository on your ubuntu with git.
+
+#cp code:
+$ makdir ~/hello-world
+$ cd ~/hello-world
+$ git init    					//initialization
+$ touch README
+$ git add README   				//update README file
+$ git commit -m 'first commit'	//submit update and comment
+$ git remote add origin git@github.com:xxxx/hello-world.git   				 //connect remote repository with ssh 
+or
+$ git remote set-url origin https://github.com/xxxx/hello-world.git          //connect remote repository with https
+#notes: git remote set-url for update current repository.
+$ git push -u origin master   //push local project to remote
