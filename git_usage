@@ -10,9 +10,9 @@
 
 $ cd ~/.ssh
 
-#generate key:
+#generate key: // this is for ssh key way to push your repository
 
-ssh-keygen -t rsa -C "xxxx@gmail.com"//??email??,??????ok
+ssh-keygen -t rsa -C "xxxx@gmail.com"	//your registerd email address on github
 
 
 4. Log on github Web, setting-> ssh and import your id_rsa.pub
